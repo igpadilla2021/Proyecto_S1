@@ -15,11 +15,5 @@ public class ventana1 extends JFrame {
         this.setVisible(true);
 
         panelPrincipal panel = new panelPrincipal();
-
-
-
-
-
-
     }
 }
