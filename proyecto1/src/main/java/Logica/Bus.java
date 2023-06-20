@@ -1,7 +1,7 @@
 package Logica;
 import java.util.ArrayList;
 
-public abstract class Bus {
+public abstract class Bus{
     private int numAsientos;
     private ArrayList asientosList;
     public Bus(int numAsientos){
@@ -15,12 +15,8 @@ public abstract class Bus {
         Asiento asiento = (Asiento) asientosList.get(numero-1);
         asiento.reservarAsiento();
     }
-    public boolean getEstado(int numero){
-        Asiento asiento = (Asiento) asientosList.get(numero-1);
-        return asiento.getEstado();
-    }
-    public int getNumero(int numero){
-        Asiento asiento = (Asiento) asientosList.get(numero-1);
-        return asiento.getNumero();
+    public Asiento getAsiento(int numero) {
+        Asiento asiento = (Asiento) asientosList.get(numero - 1);
+        return asiento;
     }
 }

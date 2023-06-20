@@ -6,9 +6,6 @@ public class Asiento {
     public Asiento(int num){
         this.num=num;
     }
-    public int getNum(){
-        return num;
-    }
     public boolean getEstado(){
         return ocupado;  // si retorna true esta ocupado sino no
     }

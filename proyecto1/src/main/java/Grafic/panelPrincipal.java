@@ -1,3 +1,5 @@
+package Grafic;
+
 import javax.swing.*;
 
 public class panelPrincipal extends JPanel {

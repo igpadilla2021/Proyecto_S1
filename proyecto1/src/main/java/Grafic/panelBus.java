@@ -1,3 +1,5 @@
+package Grafic;
+
 import javax.swing.*;
 import java.awt.event.ActionListener;
 
