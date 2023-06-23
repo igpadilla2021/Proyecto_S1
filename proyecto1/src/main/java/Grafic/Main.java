@@ -1,8 +1,7 @@
 package Grafic;
 
-public class Main {
-    public static void main(String[] args) {
+import java.io.IOException;
 
-        ventana1 v = new ventana1();
-    }
+public class Main {
+    public static void main(String[] args) throws IOException { Ventana v = new Ventana(); }
 }
