@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da20afa9-0b0e-45f9-9c31-cdb741cac75f" name="Changes" comment="&quot;pruebas de interfaz seleccion de viaje&quot;">
+    <list default="true" id="da20afa9-0b0e-45f9-9c31-cdb741cac75f" name="Changes" comment="&quot;creacion de clases graficas e implementacion de cambio ventanas&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Inter/Seleccion.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Inter/SeleccionViaje.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Inter/Ventana.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Inter/Ventana.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/SeleccionBus.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/SeleccionBus.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +86,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687305738722</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="&quot;creacion de clases graficas e implementacion de cambio ventanas&quot;">
+      <created>1687487500194</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1687487500194</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -94,6 +101,7 @@
     <MESSAGE value="&quot;logica completada e incorporacion de patrones&quot;" />
     <MESSAGE value="&quot;incorporacion de nombres aleatorios asociados a buses&quot;" />
     <MESSAGE value="&quot;pruebas de interfaz seleccion de viaje&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;pruebas de interfaz seleccion de viaje&quot;" />
+    <MESSAGE value="&quot;creacion de clases graficas e implementacion de cambio ventanas&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;creacion de clases graficas e implementacion de cambio ventanas&quot;" />
   </component>
 </project>
