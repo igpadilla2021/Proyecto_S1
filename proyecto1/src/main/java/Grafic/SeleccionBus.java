@@ -13,7 +13,9 @@ public class SeleccionBus extends JPanel {
         this.setLayout(null);
         this.setBackground(new Color(245, 222, 179));
 
-        String[] opciones = {"1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"};
+        String[] opciones= new String[30];
+        for (int c=0; c<30; c=c+1){
+        }
         JList<String> list = new JList<>(opciones);
         Font listFont = new Font("Arial", Font.PLAIN, 16);
         int listSpacing = 100;

@@ -11,31 +11,33 @@ public class PanelVentanas extends JPanel{
         super();
         this.setLayout(new BorderLayout());
 
-        seleccionViaje = new SeleccionViaje(this);
-        seleccionBus = new SeleccionBus(this);
-        seleccionAsientos=new SeleccionAsientos(this);
-
-        CambioVentana(1);
+        seleccionViaje = SeleccionViaje.getInstance(this);
+        CambioVentana1();
     }
 
-    public void CambioVentana(int ventana){
+    public void CambioVentana1(){
         removeAll();
-        if(ventana==1){
-            this.add(seleccionViaje, BorderLayout.CENTER);
-        }
-        if(ventana==2){
-            this.add(seleccionBus, BorderLayout.CENTER);
-        }
-        if(ventana==3){
-            this.add(seleccionAsientos, BorderLayout.CENTER);
-        }
+        this.add(seleccionViaje, BorderLayout.CENTER);
+        revalidate();
+        repaint();
+    }
+    public void CambioVentana2(){
+        removeAll();
+        seleccionBus = new SeleccionBus(this);
+        this.add(seleccionBus, BorderLayout.CENTER);
+        revalidate();
+        repaint();
+    }
+
+    public void CambioVentana3(){
+        removeAll();
+        seleccionAsientos=new SeleccionAsientos(this);
+        this.add(seleccionAsientos, BorderLayout.CENTER);
         revalidate();
         repaint();
     }
 
     public void paint (Graphics g) {
         super.paint(g);
-        seleccionViaje.repaint();
-        seleccionBus.repaint();
     }
 }

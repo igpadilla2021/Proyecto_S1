@@ -7,20 +7,12 @@ public class Estacion {
     private static Estacion instance;
     private ArrayList<Abastecimiento> abastecimientoList;
 
-    private Estacion() {
+    public Estacion() {
         abastecimientoList = new ArrayList<>();
         // incorporar nombres asociados a los buses
         for (int c = 8; c < 22 + 1; c = c + 1) {
             abastecimientoList.add(new Abastecimiento());
         }
-    }
-
-    /** implementacion de patron singleton con le objetivo que haya una unica instancia de Estacion */
-    public static Estacion getInstance() {
-        if (instance == null) {
-            instance = new Estacion();
-        }
-        return instance;
     }
 
     public void reservarAsiento(int cual_bus, int cual_numero, int cual_horario) {

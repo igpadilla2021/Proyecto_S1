@@ -7,7 +7,6 @@ import java.awt.event.ActionListener;
 public class BotonCambio extends JButton {
     private int numVentana;
     private PanelVentanas panelVentanas;
-    private JButton avanzarButton;
     public BotonCambio(int numVentana, PanelVentanas panelVentanas, String text){
         super(text);
         this.panelVentanas=panelVentanas;
@@ -17,13 +16,13 @@ public class BotonCambio extends JButton {
     public class EscuchadorBotton implements ActionListener {
         public void actionPerformed(ActionEvent ae) {
             if (numVentana==1){
-                panelVentanas.CambioVentana(numVentana);
+                panelVentanas.CambioVentana1();
             }
             if (numVentana==2){
-                panelVentanas.CambioVentana(numVentana);
+                panelVentanas.CambioVentana2();
             }
             if (numVentana==3){
-                panelVentanas.CambioVentana(numVentana);
+                panelVentanas.CambioVentana3();
             }
         }
     }
