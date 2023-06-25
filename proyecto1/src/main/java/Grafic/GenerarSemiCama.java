@@ -1,11 +1,14 @@
 package Grafic;
 
+import Logica.Bus;
+
 import javax.swing.*;
+import java.awt.*;
 
 public class GenerarSemiCama extends JPanel {
     private int cantidadAsientos=30;
     private Asiento asiento;
-    public GenerarSemiCama(){
+    public GenerarSemiCama(Bus bus, SeleccionAsientos seleccionAsientos){
         this.setLayout(null);
 
         //generador de asientos
@@ -19,7 +22,14 @@ public class GenerarSemiCama extends JPanel {
                 if(j+num>=31){
                     break;
                 }
-                asiento=new Asiento(j+num);
+                asiento=new Asiento(j+num ,bus, seleccionAsientos);
+                if (bus.getAsiento(j+num).getEstado()==false){
+                    asiento.setBackground(Color.GREEN);
+                }
+                else{
+                    asiento.bloquear();
+                    asiento.setBackground(Color.RED);
+                }
                 asiento.setBounds(x,y,50,50);
                 this.add(asiento);
                 y=y+60;

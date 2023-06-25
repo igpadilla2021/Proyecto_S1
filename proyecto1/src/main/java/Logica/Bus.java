@@ -27,6 +27,9 @@ public abstract class Bus {
         Asiento asiento = asientosList.get(numero - 1);
         return asiento;
     }
+    public int getNumAsientos() {
+        return numAsientos;
+    }
 
     public String getName(){
         return nameBus;

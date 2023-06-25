@@ -4,16 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da20afa9-0b0e-45f9-9c31-cdb741cac75f" name="Changes" comment="&quot;comienzo interfaz basica seleccion bus&quot;">
+    <list default="true" id="da20afa9-0b0e-45f9-9c31-cdb741cac75f" name="Changes" comment="&quot;implementacion de logica a la ventana 1&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/BotonCambio.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/BotonCambio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/Asiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/Asiento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/BotonBuscar.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/Botones/BotonPasoVentan1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/BotonCambio.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/Botones/BotonRetroceder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/GenerarSalonCama.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/GenerarSalonCama.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/GenerarSemiCama.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/GenerarSemiCama.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/PanelVentanas.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/PanelVentanas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/SeleccionAsientos.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/SeleccionAsientos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/SeleccionBus.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/SeleccionBus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/SeleccionViaje.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/SeleccionViaje.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/Ventana.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/Ventana.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Logica/Bus.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Logica/Bus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Logica/Estacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Logica/Estacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Logica/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Logica/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687630448969</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="&quot;implementacion de logica a la ventana 1&quot;">
+      <created>1687648261460</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1687648261460</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -116,6 +126,7 @@
     <MESSAGE value="&quot;pruebas de interfaz seleccion de viaje&quot;" />
     <MESSAGE value="&quot;creacion de clases graficas e implementacion de cambio ventanas&quot;" />
     <MESSAGE value="&quot;comienzo interfaz basica seleccion bus&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;comienzo interfaz basica seleccion bus&quot;" />
+    <MESSAGE value="&quot;implementacion de logica a la ventana 1&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;implementacion de logica a la ventana 1&quot;" />
   </component>
 </project>

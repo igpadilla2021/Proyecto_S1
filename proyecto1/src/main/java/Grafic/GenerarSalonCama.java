@@ -1,11 +1,14 @@
 package Grafic;
 
+import Logica.Bus;
+
 import javax.swing.*;
+import java.awt.*;
 
 public class GenerarSalonCama extends JPanel {
     private int cantidadAsientos=12;
     private Asiento asiento;
-    public GenerarSalonCama(){
+    public GenerarSalonCama(Bus bus, SeleccionAsientos seleccionAsientos){
         this.setLayout(null);
 
         //generador de asientos
@@ -19,7 +22,14 @@ public class GenerarSalonCama extends JPanel {
                 if(j+num>=31){
                     break;
                 }
-                asiento=new Asiento(j+num);
+                asiento=new Asiento(j+num+30, bus, seleccionAsientos);
+                if (bus.getAsiento(j+num+30).getEstado()==false){
+                    asiento.setBackground(Color.blue);
+                }
+                else {
+                    asiento.bloquear();
+                    asiento.setBackground(Color.red);
+                }
                 asiento.setBounds(x,y,50,50);
                 this.add(asiento);
                 y=y+80;

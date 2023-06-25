@@ -1,37 +1,77 @@
 package Grafic;
 
+import Grafic.Botones.BotonPasoVentana2;
+import Grafic.Botones.BotonRetroceder;
+import Logica.Bus;
+import Logica.Estacion;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
 
 public class SeleccionBus extends JPanel {
     private PanelVentanas panelVentanas;
     private JButton retornoButton;
     private JButton siguienteButton;
-    public SeleccionBus(PanelVentanas panelVentanas) {
+    private JList<String>  list;
+    private Bus[] buses;
+    private Bus bus;
+    public SeleccionBus(PanelVentanas panelVentanas, Estacion estacion) {
         this.panelVentanas = panelVentanas;
         this.setLayout(null);
-        this.setBackground(new Color(245, 222, 179));
 
-        String[] opciones= new String[30];
-        for (int c=0; c<30; c=c+1){
+        String[] opciones = new String[30];
+        buses = new Bus[30];
+        int p = 0;
+        for (int c = 8; c < 23; c = c + 1) {
+            Bus b1 = estacion.getBus(Estacion.SEMI_CAMA, c);
+            String bus1 = "   " + b1.getName() + "        salida: " + c + ":00" + "        SERVICIO: semi_cama";
+            opciones[p] = bus1;
+            buses[p] = b1;
+            p = p + 1;
+            Bus b2 = estacion.getBus(Estacion.SALON_CAMA, c);
+            String bus2 = "   " + b2.getName() + "        salida: " + c + ":00" + "        SERVICIO: semi_cama y salon cama";
+            opciones[p] = bus2;
+            buses[p] = b2;
+            p = p + 1;
         }
-        JList<String> list = new JList<>(opciones);
+
+        //cambio de tamaño y formato letras para que se vea mejor y mas grande
+        list = new JList<>(opciones);
         Font listFont = new Font("Arial", Font.PLAIN, 16);
         int listSpacing = 100;
         list.setFont(listFont);
         list.setFixedCellHeight(listFont.getSize() + listSpacing);
 
+        list.addMouseListener(new ElegirBus());
         JScrollPane seleccion = new JScrollPane(list);
-        seleccion.setBounds(0,0,500,600);
+        seleccion.addMouseListener(new ElegirBus());
+        seleccion.setBounds(0, 0, 800, 600);
 
-        retornoButton = new BotonCambio(1,panelVentanas,"CAMBIAR VIAJE");
-        siguienteButton = new BotonCambio(3,panelVentanas,"SELECCIONAR ASIENTOS");
-        retornoButton.setBounds(500,100,300,100);
-        siguienteButton.setBounds(500,400,300,100);
+        retornoButton = new BotonRetroceder(1, panelVentanas, "CAMBIAR VIAJE");
+        retornoButton.setBackground(new Color(255,99,71));
+        siguienteButton = new BotonPasoVentana2(this,panelVentanas,"SELECCIONAR ASIENTOS");
+        siguienteButton.setBackground(new Color(255,99,71));
+        retornoButton.setBounds(0,600,200,100);
+        siguienteButton.setBounds(600,600,200,100);
 
         this.add(seleccion);
         this.add(retornoButton);
         this.add(siguienteButton);
+    }
+    public class ElegirBus extends MouseAdapter{
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            int seleccionado = list.getSelectedIndex();
+            bus = buses[seleccionado];
+        }
+    }
+    public Bus getbus(){
+        return bus;
+    }
+    public void paint (Graphics g) {
+        super.paint(g);
+
     }
 }

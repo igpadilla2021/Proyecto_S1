@@ -1,5 +1,6 @@
 package Grafic;
 
+import Grafic.Botones.BotonPasoVentan1;
 import Logica.GenerarEstaciones;
 
 import javax.swing.*;
@@ -27,9 +28,9 @@ public class SeleccionViaje extends JPanel {
     private SeleccionViaje(PanelVentanas panelVentanas) throws IOException {
         this.panelVentanas=panelVentanas;
         this.setLayout(null);
-        this.setBackground(new Color(245,222,179));
 
         ciudades=new String[]{"Concepcion", "Chillan", "Santiago", "yumbel"};
+        // estos son los desplegables con la lista de arriba
         ciudadOrigen = new JComboBox<>(ciudades);
         ciudadDestino = new JComboBox<>(ciudades);
         generarEstaciones= new GenerarEstaciones(ciudades);
@@ -39,26 +40,27 @@ public class SeleccionViaje extends JPanel {
         salida=new JLabel("SELECCIONAR CIUDAD DE ORIGEN : ");
         llegada=new JLabel("SELECCIONAR CIUDAD DE LLEGADA :");
 
-        confirmarButton = new BotonBuscar(this,panelVentanas,"¡ BUSCAR !",generarEstaciones);
+        confirmarButton = new BotonPasoVentan1(this,panelVentanas,"¡ BUSCAR !",generarEstaciones);
+        confirmarButton.setBackground(new Color(255,99,71));
 
         imagenUbicacion = new JLabel();
         ImageIcon imagen = new ImageIcon("C:\\Users\\igpad\\OneDrive\\Documentos\\GitHub\\Proyecto_S1\\proyecto1\\src\\main\\java\\JPG\\gps1.png");
         imagenUbicacion.setIcon(imagen);
 
-        int distancia=320;
-        salida.setBounds(distancia, 20, 300,20);
+        int distancia=330;
+        salida.setBounds(distancia, 70, 300,20);
         this.add(salida);
-        llegada.setBounds(distancia, 170, 300,20);
+        llegada.setBounds(distancia, 230, 300,20);
         this.add(llegada);
 
-        ciudadOrigen.setBounds(distancia,50,300,100);
+        ciudadOrigen.setBounds(distancia,100,300,100);
         this.add(ciudadOrigen);
-        ciudadDestino.setBounds(distancia,200,300,100);
+        ciudadDestino.setBounds(distancia,250,300,100);
         this.add(ciudadDestino);
 
-        imagenUbicacion.setBounds(60,70,192,192);
+        imagenUbicacion.setBounds(60,120,192,192);
         this.add(imagenUbicacion);
-        confirmarButton.setBounds(250,450,300,100);
+        confirmarButton.setBounds(210,450,350,150);
         this.add(confirmarButton);
     }
 

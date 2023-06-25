@@ -34,7 +34,7 @@ public class Estacion {
             return hora.getSalonCama().getAsiento(cual_numero);
         }
     }
-    public Bus getBus(int cual_bus, int cual_numero, int cual_horario){
+    public Bus getBus(int cual_bus, int cual_horario){
         Abastecimiento hora = abastecimientoList.get(cual_horario - 8);
         if (cual_bus == SEMI_CAMA) {
             return hora.getSemi_cama();
