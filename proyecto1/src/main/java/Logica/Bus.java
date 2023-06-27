@@ -62,4 +62,13 @@ public abstract class Bus {
     public String getName(){
         return nameBus;
     }
+    public int getNumDisponibles(){
+        int disponibles = numAsientos;
+        for (int c = 0; c < numAsientos; c++) {
+            if(asientosList.get(c).getEstado()){
+                disponibles= disponibles - 1;
+            }
+        }
+        return disponibles;
+    }
 }

@@ -4,30 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da20afa9-0b0e-45f9-9c31-cdb741cac75f" name="Changes" comment="&quot;implementacion de logica a la ventana 1&quot;">
+    <list default="true" id="da20afa9-0b0e-45f9-9c31-cdb741cac75f" name="Changes" comment="&quot;finalizacion basica de interfaz&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/Asiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/Asiento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/Botones/BotonPasoVentan1.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/Botones/BotonPasoVentan1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/Botones/BotonPasoVentana2.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/Botones/BotonPasoVentana2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/Botones/BotonReservar.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/Botones/BotonReservar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/Botones/BotonRetroceder.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/Botones/BotonRetroceder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/GenerarSalonCama.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/GenerarSalonCama.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/GenerarSemiCama.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/GenerarSemiCama.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/PanelVentanas.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/PanelVentanas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/SeleccionAsientos.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/SeleccionAsientos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/SeleccionBus.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/SeleccionBus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/SeleccionViaje.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/SeleccionViaje.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/Ventana.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/Ventana.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Logica/Asiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Logica/Asiento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Logica/AsientoDisponible.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Logica/AsientoDisponible.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Logica/AsientoOcupado.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Logica/AsientoOcupado.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Logica/Bus.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Logica/Bus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Logica/EstadoAsiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Logica/EstadoAsiento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Logica/GenerarEstaciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Logica/GenerarEstaciones.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Logica/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Logica/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Logica/Salon_cama.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Logica/Salon_cama.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Logica/Semi_cama.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Logica/Semi_cama.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Logica/Main.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,14 +50,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/igpad/OneDrive/Documentos/GitHub/Proyecto_S1"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/igpad/OneDrive/Documentos/GitHub/Proyecto_S1&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

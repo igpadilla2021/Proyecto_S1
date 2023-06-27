@@ -32,6 +32,7 @@ public class SeleccionAsientos extends JPanel{
     public SeleccionAsientos(PanelVentanas panelVentanas, int servicio, Bus bus) {
         this.panelVentanas = panelVentanas;
         this.setLayout(null);
+        this.setBackground(new Color(245,245,245));
         asientosList=new int[42];
 
         //generacion de graficacion asientos
@@ -55,6 +56,7 @@ public class SeleccionAsientos extends JPanel{
         //botones de cambio de ventana
         retornoButton = new BotonRetroceder(2,panelVentanas,"CAMBIAR BUS");
         siguienteButton = new BotonReservar(this,bus,panelVentanas,"RESERVAR ASIENTOS");
+        siguienteButton.setEnabled(false);
         retornoButton.setBounds(0,600,200,100);
         siguienteButton.setBounds(600,600,200,100);
         this.add(retornoButton);
@@ -66,6 +68,7 @@ public class SeleccionAsientos extends JPanel{
      * @param num numero para reservar
      */
     public void seleccionar(int num){
+        siguienteButton.setEnabled(true);
         cantidadReservar=cantidadReservar+1;
         if(cantidadReservar<15){
             asientosList[num-1]=num;
@@ -77,8 +80,17 @@ public class SeleccionAsientos extends JPanel{
      * @param num numero para reservar
      */
     public void desselccionar(int num){
+        int cantidadRervados=0;
         cantidadReservar=cantidadReservar-1;
         asientosList[num-1]=0;
+        for (int c=0; c<42; c=c+1){
+            if(asientosList[c]!=0){
+                cantidadRervados=1;
+            }
+        }
+        if(cantidadRervados==0){
+            siguienteButton.setEnabled(false);
+        }
     }
 
     /**
@@ -104,16 +116,21 @@ public class SeleccionAsientos extends JPanel{
         g.setColor(Color.BLACK);
         Font font = new Font("Arial", Font.PLAIN, 20);
         g.setFont(font);
-        g.drawString("ASIENTOS SELECCIONADOS",260,570);
+        g.drawString("ASIENTOS SELECCIONADOS",260,580);
         font = new Font("Arial", Font.PLAIN, 15);
-        g.setFont(font);
-        g.drawString(asientosString,230,620);
+        g.drawString(asientosString,230,640);
         g.setColor(Color.GREEN);
-        g.fillRect(400,325,35,35);
+        g.fillRect(450,325,35,35);
         g.setColor(Color.blue);
-        g.fillRect(400,375,35,35);
+        g.fillRect(450,375,35,35);
         g.setColor(Color.red);
-        g.fillRect(400,425,35,35);
+        g.fillRect(450,425,35,35);
+        g.setColor(Color.BLACK);
+        font = new Font("Arial", Font.PLAIN, 20);
+        g.setFont(font);
+        g.drawString("Asientos semicama",495,350);
+        g.drawString("Asientos saloncama",495,400);
+        g.drawString("¡Asientos ocupados!",495,450);
     }
 
     /**

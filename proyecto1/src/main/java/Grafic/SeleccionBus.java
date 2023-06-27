@@ -22,7 +22,8 @@ public class SeleccionBus extends JPanel {
     private JButton siguienteButton;
     private JList<String>  list;
     private Bus[] buses;
-    private Bus bus;
+    private Bus bus=null;
+    private SeleccionBus seleccionBus;
 
     /**
      * metodo constructor para la seleccion de bus, genera las opciones de buses y cambia la fuente de las letras
@@ -32,6 +33,7 @@ public class SeleccionBus extends JPanel {
     public SeleccionBus(PanelVentanas panelVentanas, Estacion estacion) {
         this.panelVentanas = panelVentanas;
         this.setLayout(null);
+        seleccionBus=this;
 
         String[] opciones = new String[30];
         buses = new Bus[30];
@@ -55,6 +57,7 @@ public class SeleccionBus extends JPanel {
         int listSpacing = 100;
         list.setFont(listFont);
         list.setFixedCellHeight(listFont.getSize() + listSpacing);
+        list.setBackground(new Color(255,222,173));
 
         list.addMouseListener(new ElegirBus());
         JScrollPane seleccion = new JScrollPane(list);
@@ -64,6 +67,7 @@ public class SeleccionBus extends JPanel {
         retornoButton = new BotonRetroceder(1, panelVentanas, "CAMBIAR VIAJE");
         retornoButton.setBackground(new Color(255,99,71));
         siguienteButton = new BotonPasoVentana2(this,panelVentanas,"SELECCIONAR ASIENTOS");
+        siguienteButton.setEnabled(false);
         siguienteButton.setBackground(new Color(255,99,71));
         retornoButton.setBounds(0,600,200,100);
         siguienteButton.setBounds(600,600,200,100);
@@ -81,6 +85,8 @@ public class SeleccionBus extends JPanel {
         public void mouseClicked(MouseEvent e) {
             int seleccionado = list.getSelectedIndex();
             bus = buses[seleccionado];
+            siguienteButton.setEnabled(true);
+            pintar();
         }
     }
 
@@ -92,12 +98,25 @@ public class SeleccionBus extends JPanel {
         return bus;
     }
 
+    public void pintar(){
+        seleccionBus.repaint();
+    }
+
     /**
      * metodo para pintar la ventana
      * @param g es el pincel
      */
     public void paint (Graphics g) {
         super.paint(g);
-
+        g.setColor(Color.BLACK);
+        Font font = new Font("Arial", Font.PLAIN, 20);
+        g.setFont(font);
+        g.drawString("ASIENTOS DISPONIBLES",280,625);
+        if(bus!=null){
+            g.setColor(new Color(255,99,71));
+            font = new Font("Arial", Font.PLAIN, 50);
+            g.setFont(font);
+            g.drawString(bus.getNumDisponibles()+"/"+bus.getNumAsientos(),330,675);
+        }
     }
 }

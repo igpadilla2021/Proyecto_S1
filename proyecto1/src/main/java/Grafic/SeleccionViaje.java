@@ -40,8 +40,9 @@ public class SeleccionViaje extends JPanel {
     private SeleccionViaje(PanelVentanas panelVentanas) throws IOException {
         this.panelVentanas=panelVentanas;
         this.setLayout(null);
+        this.setBackground(new Color(245,245,245));
 
-        ciudades=new String[]{"Concepcion", "Chillan", "Santiago", "yumbel"};
+        ciudades=new String[]{"Concepcion", "Chillan", "Santiago", "Yumbel"};
         // estos son los desplegables con la lista de arriba
         ciudadOrigen = new JComboBox<>(ciudades);
         ciudadDestino = new JComboBox<>(ciudades);
@@ -53,6 +54,7 @@ public class SeleccionViaje extends JPanel {
         llegada=new JLabel("SELECCIONAR CIUDAD DE LLEGADA :");
 
         confirmarButton = new BotonPasoVentan1(this,panelVentanas,"¡ BUSCAR !",generarEstaciones);
+        confirmarButton.setEnabled(false);
         confirmarButton.setBackground(new Color(255,99,71));
 
         imagenUbicacion = new JLabel();
@@ -90,6 +92,7 @@ public class SeleccionViaje extends JPanel {
     public class SeleccionOrigen implements ActionListener {
         public void actionPerformed(ActionEvent ae) {
             origen = (String) ciudadOrigen.getSelectedItem();
+            verificar();
         }
     }
 
@@ -107,9 +110,22 @@ public class SeleccionViaje extends JPanel {
     public class SelecionDestino implements ActionListener {
         public void actionPerformed(ActionEvent ae) {
             destino = (String) ciudadDestino.getSelectedItem();
+            verificar();
         }
     }
-
+    public void verificar(){
+        if ((destino==origen) || destino==null || origen==null){
+            confirmarButton.setEnabled(false);
+        }
+        else {
+            confirmarButton.setEnabled(true);
+        }
+    }
+    public void reset(){
+        destino=null;
+        origen=null;
+        verificar();
+    }
     /**
      * metodo para conseguir el destino
      * @return retorna el destino

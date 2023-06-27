@@ -75,6 +75,10 @@ public class PanelVentanas extends JPanel{
         if(ventana==2){
             this.add(seleccionBus, BorderLayout.CENTER);
         }
+        if(ventana==3){
+            seleccionViaje.reset();
+            this.add(seleccionViaje, BorderLayout.CENTER);
+        }
         revalidate();
         repaint();
     }

@@ -45,7 +45,7 @@ public class BotonReservar extends JButton {
                     bus.reservar(c+1);
                 }
             }
-            panelVentanas.retrocesoVentana(1);
+            panelVentanas.retrocesoVentana(3);
         }
     }
 }
