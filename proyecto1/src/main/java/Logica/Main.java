@@ -1,3 +1,8 @@
+/**
+ * @author Ignacio padilla
+ * @author Joaquin garcia
+ */
+
 package Logica;
 
 public class Main {

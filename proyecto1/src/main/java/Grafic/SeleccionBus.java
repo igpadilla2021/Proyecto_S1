@@ -1,3 +1,9 @@
+/**
+ * clase que define el panel para seleccionar bus
+ * @author Ignacio padilla
+ * @author Joaquin garcia
+ */
+
 package Grafic;
 
 import Grafic.Botones.BotonPasoVentana2;
@@ -17,6 +23,12 @@ public class SeleccionBus extends JPanel {
     private JList<String>  list;
     private Bus[] buses;
     private Bus bus;
+
+    /**
+     * metodo constructor para la seleccion de bus, genera las opciones de buses y cambia la fuente de las letras
+     * @param panelVentanas ventana en la que nos ubicamos
+     * @param estacion es la estacion
+     */
     public SeleccionBus(PanelVentanas panelVentanas, Estacion estacion) {
         this.panelVentanas = panelVentanas;
         this.setLayout(null);
@@ -60,6 +72,10 @@ public class SeleccionBus extends JPanel {
         this.add(retornoButton);
         this.add(siguienteButton);
     }
+
+    /**
+     * metodo para seleccionar la opcion de bus que se quiere comprar
+     */
     public class ElegirBus extends MouseAdapter{
         @Override
         public void mouseClicked(MouseEvent e) {
@@ -67,9 +83,19 @@ public class SeleccionBus extends JPanel {
             bus = buses[seleccionado];
         }
     }
+
+    /**
+     * metodo para obtener el bus
+     * @return retorna el bus
+     */
     public Bus getbus(){
         return bus;
     }
+
+    /**
+     * metodo para pintar la ventana
+     * @param g es el pincel
+     */
     public void paint (Graphics g) {
         super.paint(g);
 

@@ -1,3 +1,9 @@
+/**
+ * clase que define el panel Ventanas
+ * @author Ignacio padilla
+ * @author Joaquin garcia
+ */
+
 package Grafic;
 
 import Logica.Bus;
@@ -10,6 +16,11 @@ public class PanelVentanas extends JPanel{
     private SeleccionViaje seleccionViaje;
     private SeleccionBus seleccionBus;
     private SeleccionAsientos seleccionAsientos;
+
+    /**
+     * metodo constructor de el panel Ventana el cual genera las ventanas
+     * @throws IOException
+     */
     public PanelVentanas() throws IOException {
         super();
         this.setLayout(new BorderLayout());
@@ -19,12 +30,18 @@ public class PanelVentanas extends JPanel{
         avanceVentana1();
     }
 
+    /**
+     * metodo para costruir la ventana 1
+     */
     public void avanceVentana1(){
         removeAll();
         this.add(seleccionViaje, BorderLayout.CENTER);
         revalidate();
         repaint();
     }
+    /**
+     * metodo para costruir la ventana 2
+     */
     public void avanceVentana2(Estacion estacion){
         removeAll();
         seleccionBus = new SeleccionBus(this, estacion);
@@ -32,6 +49,9 @@ public class PanelVentanas extends JPanel{
         revalidate();
         repaint();
     }
+    /**
+     * metodo para costruir la ventana 3
+     */
         public void avanceVentana3(int op, Bus bus){
         removeAll();
         if(op==1){
@@ -44,7 +64,9 @@ public class PanelVentanas extends JPanel{
         }
         revalidate();
         repaint();
-    }
+    }/**
+     * metodo para costruir la ventana de retroceso
+     */
     public void retrocesoVentana(int ventana){
         removeAll();
         if(ventana==1){

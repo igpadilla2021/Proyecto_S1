@@ -1,3 +1,9 @@
+/**
+ * clase que define la generacion de los asientos semi cama
+ * @author Ignacio padilla
+ * @author Joaquin garcia
+ */
+
 package Grafic;
 
 import Logica.Bus;
@@ -8,6 +14,12 @@ import java.awt.*;
 public class GenerarSemiCama extends JPanel {
     private int cantidadAsientos=30;
     private Asiento asiento;
+
+    /**
+     * metodo constructor para generar la sala de bus con asientos semi cama.
+     * @param bus es el bus en el cual se va a construir la sala de asientos salon cama
+     * @param seleccionAsientos metodo que se encarga de la seleccion de asientos
+     */
     public GenerarSemiCama(Bus bus, SeleccionAsientos seleccionAsientos){
         this.setLayout(null);
 

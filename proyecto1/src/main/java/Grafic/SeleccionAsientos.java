@@ -1,3 +1,9 @@
+/**
+ *clase que define el panel para seleccionar asientos
+ * @author Ignacio padilla
+ * @author Joaquin garcia
+ */
+
 package Grafic;
 
 import Grafic.Botones.BotonReservar;
@@ -16,6 +22,13 @@ public class SeleccionAsientos extends JPanel{
     private int[] asientosList;
     private int cantidadReservar=0;
 
+    /**
+     * metodo constructor de el seleccionador de asientos, el cual se encarga de generar el cuadro seleccionador de
+     * asientos, los colores y botones de cambio de ventana
+     * @param panelVentanas es el panel en el cual se ubica lo señalado
+     * @param servicio es el tipo de asiento que se ofrece
+     * @param bus es el bus donde se generan los asientos
+     */
     public SeleccionAsientos(PanelVentanas panelVentanas, int servicio, Bus bus) {
         this.panelVentanas = panelVentanas;
         this.setLayout(null);
@@ -47,16 +60,31 @@ public class SeleccionAsientos extends JPanel{
         this.add(retornoButton);
         this.add(siguienteButton);
     }
+
+    /**
+     * metodo para seleccionar asiento
+     * @param num numero para reservar
+     */
     public void seleccionar(int num){
         cantidadReservar=cantidadReservar+1;
         if(cantidadReservar<15){
             asientosList[num-1]=num;
         }
     }
+
+    /**
+     * metodo para deseleccionar asientos
+     * @param num numero para reservar
+     */
     public void desselccionar(int num){
         cantidadReservar=cantidadReservar-1;
         asientosList[num-1]=0;
     }
+
+    /**
+     * metodo que se encarga de "pintar" la ventana
+     * @param g  es el pincel
+     */
     public void paint (Graphics g) {
         super.paint(g);
         g.setColor(new Color(255,99,71));
@@ -87,6 +115,11 @@ public class SeleccionAsientos extends JPanel{
         g.setColor(Color.red);
         g.fillRect(400,425,35,35);
     }
+
+    /**
+     * metodo para conseguir los asientos reservados
+     * @return retorna la lista de asientos reservados
+     */
     public int[] getReservados(){
         return asientosList;
     }
