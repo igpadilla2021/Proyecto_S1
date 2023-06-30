@@ -6,15 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="da20afa9-0b0e-45f9-9c31-cdb741cac75f" name="Changes" comment="&quot;finalizacion basica de interfaz&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26-06-2023_23_47__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26-06-2023_23_47__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/Botones/BotonReservar.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/Botones/BotonReservar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/GenerarSemiCama.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/GenerarSemiCama.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/PanelVentanas.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/PanelVentanas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/SeleccionAsientos.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/SeleccionAsientos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/SeleccionBus.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/SeleccionBus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/SeleccionViaje.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/SeleccionViaje.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Logica/Bus.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Logica/Bus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Logica/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyecto1/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +22,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -50,12 +47,48 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/igpad/OneDrive/Documentos/GitHub/Proyecto_S1&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_directory_selection": "C:/Users/chout/OneDrive/Documentos/GitHub/Proyecto_S1/proyecto1/src/main/java/Logica",
+    "last_opened_file_path": "C:/Users/igpad/OneDrive/Documentos/GitHub/Proyecto_S1",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="Logica" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="EstacionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Proyecto_1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Logica.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Logica" />
+      <option name="MAIN_CLASS_NAME" value="Logica.EstacionTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.EstacionTest" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
