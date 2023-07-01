@@ -6,7 +6,10 @@
 
 package Logica;
 
-/** aplicacion del patron State en funcion del cambio de estado de asientos */
+/**
+ * interfas utilizada para la aplicacion del patron state
+ * define una funcion asosiada a la reserva de asientos
+ */
 interface EstadoAsiento {
     void reservar(Asiento asiento);
 }

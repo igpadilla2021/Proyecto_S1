@@ -32,7 +32,7 @@ public class SeleccionAsientos extends JPanel{
     public SeleccionAsientos(PanelVentanas panelVentanas, int servicio, Bus bus) {
         this.panelVentanas = panelVentanas;
         this.setLayout(null);
-        this.setBackground(new Color(245,245,245));
+        this.setBackground(new Color(255,222,173));
         asientosList=new int[42];
 
         //generacion de graficacion asientos
@@ -55,8 +55,10 @@ public class SeleccionAsientos extends JPanel{
 
         //botones de cambio de ventana
         retornoButton = new BotonRetroceder(2,panelVentanas,"CAMBIAR BUS");
+        retornoButton.setBackground(new Color(255,99,71));
         siguienteButton = new BotonReservar(this,bus,panelVentanas,"RESERVAR ASIENTOS");
         siguienteButton.setEnabled(false);
+        siguienteButton.setBackground(new Color(255,99,71));
         retornoButton.setBounds(0,600,200,100);
         siguienteButton.setBounds(600,600,200,100);
         this.add(retornoButton);
@@ -99,7 +101,7 @@ public class SeleccionAsientos extends JPanel{
      */
     public void paint (Graphics g) {
         super.paint(g);
-        g.setColor(new Color(255,99,71));
+        g.setColor(new Color(220,220,240));
         g.fillRect(200,550,400,150);
         // lista de asientos seleccionados hasta el momento
         String asientosString="";

@@ -18,6 +18,7 @@ public class Asiento  extends JButton {
     private Bus bus;
     private SeleccionAsientos seleccionAsientos;
     private boolean estado=false;
+    private Asiento asiento;
 
     /**
      * metodo constructor de Asiento que se encarga de generar y asignar un numero a los asientos para cada bus, junto
@@ -28,10 +29,19 @@ public class Asiento  extends JButton {
      */
     public Asiento(int numAsiento, Bus bus, SeleccionAsientos seleccionAsientos){
         super(Integer.toString(numAsiento));
+        asiento=this;
         this.seleccionAsientos=seleccionAsientos;
         this.bus=bus;
         this.numAsiento=numAsiento;
         this.addActionListener(new EscuchadorBotton());
+    }
+
+    public void seleccionado(){
+
+        asiento.setText("X");
+    }
+    public void noseleccionado(){
+        asiento.setText(Integer.toString(numAsiento));
     }
 
     /**
@@ -43,10 +53,12 @@ public class Asiento  extends JButton {
             if (estado==false && bus.getAsiento(numAsiento).getEstado()==false){
                 seleccionAsientos.seleccionar(numAsiento);
                 estado=true;
+                seleccionado();
             }
             else if (estado==true && bus.getAsiento(numAsiento).getEstado()==false){
                 seleccionAsientos.desselccionar(numAsiento);
                 estado=false;
+                noseleccionado();
             }
             seleccionAsientos.repaint();
         }

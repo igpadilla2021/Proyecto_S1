@@ -10,12 +10,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GenerarEstaciones {
+    /**
+     * se tienen 2 listas, una encargada de alamacenar los posibles viajes y la otra almacena las estaciones asosiadas
+     * a cada combinacion, y un entero equivalente a la cantidad de estaciones
+     */
     private List<Estacion> viajes;
     private int cantidad=0;
     private List<List<String>> combinaciones;
 
     /**
-     * metodo constructor para generar una cantidad de estaciones
+     * metodo constructor para generar una cantidad de estaciones por cada posible conmbinacion de la lista de ciudades
+     * ingresada y ademas de asignar una estacion a cada posible combinacion
      * @param listaCiudades es una lista con las ciudades
      */
     public GenerarEstaciones(String[] listaCiudades){
@@ -39,7 +44,7 @@ public class GenerarEstaciones {
     }
 
     /**
-     * metodo para obtener la estacion en la que estamos
+     * metodo para obtener la estacion asosiada al origen y destino que deseamos
      * @param origen origen donde se encuentra la estacion
      * @param destino destino
      * @return retorna la estacion

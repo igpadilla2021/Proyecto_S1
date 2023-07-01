@@ -2,38 +2,28 @@ package Logica;
 import java.util.ArrayList;
 
 public class Estacion {
+    /**
+     * se definen 2 enteros, cada uno asosiado a un tipo de bus, y ademas una lista que almacenara el abastecimiento de
+     * buses para cada hora
+     */
     public static final int SEMI_CAMA = 1;
     public static final int SALON_CAMA = 2;
-    private static Estacion instance;
     private ArrayList<Abastecimiento> abastecimientoList;
 
+    /**
+     * metodo constructor que se encarga de egenerar un abastecimiento de buses por cada hora de
+     * servicio (de 8:00 a 22:00)
+     */
     public Estacion() {
         abastecimientoList = new ArrayList<>();
-        // incorporar nombres asociados a los buses
         for (int c = 8; c < 22 + 1; c = c + 1) {
             abastecimientoList.add(new Abastecimiento());
         }
     }
-
-    public void reservarAsiento(int cual_bus, int cual_numero, int cual_horario) {
-        Abastecimiento hora = abastecimientoList.get(cual_horario - 8);
-        if (cual_bus == SEMI_CAMA) {
-            hora.getSemi_cama().reservar(cual_numero);
-        }
-        if (cual_bus == SALON_CAMA) {
-            hora.getSalonCama().reservar(cual_numero);
-        }
-    }
-
-    public Asiento getAsiento(int cual_bus, int cual_numero, int cual_horario) {
-        Abastecimiento hora = abastecimientoList.get(cual_horario - 8);
-        if (cual_bus == SEMI_CAMA) {
-            return hora.getSemi_cama().getAsiento(cual_numero);
-        }
-        else {
-            return hora.getSalonCama().getAsiento(cual_numero);
-        }
-    }
+    /**
+     *
+     * @return bus del tipo y horario seleccionado
+     */
     public Bus getBus(int cual_bus, int cual_horario){
         Abastecimiento hora = abastecimientoList.get(cual_horario - 8);
         if (cual_bus == SEMI_CAMA) {

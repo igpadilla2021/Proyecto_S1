@@ -1,0 +1,109 @@
+Index: proyecto1/src/main/java/Grafic/Asiento.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>/**\r\n * clase que define el boton para los asientos\r\n * @author Ignacio padilla\r\n * @author Joaquin garcia\r\n */\r\n\r\npackage Grafic;\r\n\r\nimport Logica.Bus;\r\n\r\nimport javax.swing.*;\r\nimport java.awt.*;\r\nimport java.awt.event.ActionEvent;\r\nimport java.awt.event.ActionListener;\r\n\r\npublic class Asiento  extends JButton {\r\n    private int numAsiento;\r\n    private Bus bus;\r\n    private SeleccionAsientos seleccionAsientos;\r\n    private boolean estado=false;\r\n\r\n    /**\r\n     * metodo constructor de Asiento que se encarga de generar y asignar un numero a los asientos para cada bus, junto\r\n     * con un escuchador para poder seleccionar el asiento deseado\r\n     * @param numAsiento es el numero del asiento\r\n     * @param bus es el bus\r\n     * @param seleccionAsientos es la clase que se encarga de la seleccion de asientos\r\n     */\r\n    public Asiento(int numAsiento, Bus bus, SeleccionAsientos seleccionAsientos){\r\n        super(Integer.toString(numAsiento));\r\n        this.seleccionAsientos=seleccionAsientos;\r\n        this.bus=bus;\r\n        this.numAsiento=numAsiento;\r\n        this.addActionListener(new EscuchadorBotton());\r\n    }\r\n\r\n    /**\r\n     * metodo que se encarga de escuchar la accion de seleccionar los asientos, asiento que su estado sea seleccionado\r\n     * o no seleccionado\r\n     */\r\n    public class EscuchadorBotton implements ActionListener {\r\n        public void actionPerformed(ActionEvent ae) {\r\n            if (estado==false && bus.getAsiento(numAsiento).getEstado()==false){\r\n                seleccionAsientos.seleccionar(numAsiento);\r\n                estado=true;\r\n            }\r\n            else if (estado==true && bus.getAsiento(numAsiento).getEstado()==false){\r\n                seleccionAsientos.desselccionar(numAsiento);\r\n                estado=false;\r\n            }\r\n            seleccionAsientos.repaint();\r\n        }\r\n    }\r\n\r\n    /**\r\n     * metodo que bloquea la seleccion de asientos\r\n     */\r\n    public void bloquear(){\r\n        this.setEnabled(false);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/proyecto1/src/main/java/Grafic/Asiento.java b/proyecto1/src/main/java/Grafic/Asiento.java
+--- a/proyecto1/src/main/java/Grafic/Asiento.java	(revision b4c896177051231455c3e2541ed3ed99a31058c7)
++++ b/proyecto1/src/main/java/Grafic/Asiento.java	(date 1687878997956)
+@@ -18,6 +18,7 @@
+     private Bus bus;
+     private SeleccionAsientos seleccionAsientos;
+     private boolean estado=false;
++    private Asiento asiento;
+ 
+     /**
+      * metodo constructor de Asiento que se encarga de generar y asignar un numero a los asientos para cada bus, junto
+@@ -28,12 +29,21 @@
+      */
+     public Asiento(int numAsiento, Bus bus, SeleccionAsientos seleccionAsientos){
+         super(Integer.toString(numAsiento));
++        asiento=this;
+         this.seleccionAsientos=seleccionAsientos;
+         this.bus=bus;
+         this.numAsiento=numAsiento;
+         this.addActionListener(new EscuchadorBotton());
+     }
+ 
++    public void seleccionado(){
++
++        asiento.setText("X");
++    }
++    public void noseleccionado(){
++        asiento.setText(Integer.toString(numAsiento));
++    }
++
+     /**
+      * metodo que se encarga de escuchar la accion de seleccionar los asientos, asiento que su estado sea seleccionado
+      * o no seleccionado
+@@ -43,10 +53,12 @@
+             if (estado==false && bus.getAsiento(numAsiento).getEstado()==false){
+                 seleccionAsientos.seleccionar(numAsiento);
+                 estado=true;
++                seleccionado();
+             }
+             else if (estado==true && bus.getAsiento(numAsiento).getEstado()==false){
+                 seleccionAsientos.desselccionar(numAsiento);
+                 estado=false;
++                noseleccionado();
+             }
+             seleccionAsientos.repaint();
+         }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"da20afa9-0b0e-45f9-9c31-cdb741cac75f\" name=\"Changes\" comment=\"&quot;finalizacion basica de interfaz&quot;\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/proyecto1/src/main/java/Grafic/Botones/BotonReservar.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/proyecto1/src/main/java/Grafic/Botones/BotonReservar.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/proyecto1/src/main/java/Grafic/GenerarSemiCama.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/proyecto1/src/main/java/Grafic/GenerarSemiCama.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/proyecto1/src/main/java/Grafic/PanelVentanas.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/proyecto1/src/main/java/Grafic/PanelVentanas.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/proyecto1/src/main/java/Grafic/SeleccionAsientos.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/proyecto1/src/main/java/Grafic/SeleccionAsientos.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/proyecto1/src/main/java/Grafic/SeleccionBus.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/proyecto1/src/main/java/Grafic/SeleccionBus.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/proyecto1/src/main/java/Grafic/SeleccionViaje.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/proyecto1/src/main/java/Grafic/SeleccionViaje.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/proyecto1/src/main/java/Logica/Bus.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/proyecto1/src/main/java/Logica/Bus.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/proyecto1/src/main/java/Logica/Main.java\" beforeDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Interface\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"useMavenConfig\" value=\"true\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2RRtm7WLQoHj75YJpGgVJktOaoO\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/igpad/OneDrive/Documentos/GitHub/Proyecto_S1&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"da20afa9-0b0e-45f9-9c31-cdb741cac75f\" name=\"Changes\" comment=\"\" />\r\n      <created>1687224877819</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1687224877819</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"&quot;logica basica completada&quot;\">\r\n      <created>1687224969526</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1687224969526</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"&quot;logica completada e incorporacion de patrones&quot;\">\r\n      <created>1687239987770</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1687239987770</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"&quot;incorporacion de nombres aleatorios asociados a buses&quot;\">\r\n      <created>1687289086634</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1687289086634</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"&quot;pruebas de interfaz seleccion de viaje&quot;\">\r\n      <created>1687305738722</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1687305738722</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"&quot;creacion de clases graficas e implementacion de cambio ventanas&quot;\">\r\n      <created>1687487500194</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1687487500194</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"&quot;comienzo interfaz basica seleccion bus&quot;\">\r\n      <created>1687630448969</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1687630448969</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"&quot;implementacion de logica a la ventana 1&quot;\">\r\n      <created>1687648261460</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1687648261460</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"8\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"&quot;logica basica completada&quot;\" />\r\n    <MESSAGE value=\"&quot;logica completada e incorporacion de patrones&quot;\" />\r\n    <MESSAGE value=\"&quot;incorporacion de nombres aleatorios asociados a buses&quot;\" />\r\n    <MESSAGE value=\"&quot;pruebas de interfaz seleccion de viaje&quot;\" />\r\n    <MESSAGE value=\"&quot;creacion de clases graficas e implementacion de cambio ventanas&quot;\" />\r\n    <MESSAGE value=\"&quot;comienzo interfaz basica seleccion bus&quot;\" />\r\n    <MESSAGE value=\"&quot;implementacion de logica a la ventana 1&quot;\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"&quot;implementacion de logica a la ventana 1&quot;\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision b4c896177051231455c3e2541ed3ed99a31058c7)
++++ b/.idea/workspace.xml	(date 1687878562218)
+@@ -4,17 +4,9 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="da20afa9-0b0e-45f9-9c31-cdb741cac75f" name="Changes" comment="&quot;finalizacion basica de interfaz&quot;">
+-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++    <list default="true" id="da20afa9-0b0e-45f9-9c31-cdb741cac75f" name="Changes" comment="&quot;finalizacion de interfaz y bloqueo de botones&quot;">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/Botones/BotonReservar.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/Botones/BotonReservar.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/GenerarSemiCama.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/GenerarSemiCama.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/PanelVentanas.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/PanelVentanas.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/SeleccionAsientos.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/SeleccionAsientos.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/SeleccionBus.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/SeleccionBus.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/SeleccionViaje.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/SeleccionViaje.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Logica/Bus.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Logica/Bus.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Logica/Main.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/Asiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto1/src/main/java/Grafic/Asiento.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -114,7 +106,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1687648261460</updated>
+     </task>
+-    <option name="localTasksCounter" value="8" />
++    <task id="LOCAL-00008" summary="&quot;finalizacion de interfaz y bloqueo de botones&quot;">
++      <created>1687850168757</created>
++      <option name="number" value="00008" />
++      <option name="presentableId" value="LOCAL-00008" />
++      <option name="project" value="LOCAL" />
++      <updated>1687850168758</updated>
++    </task>
++    <option name="localTasksCounter" value="9" />
+     <servers />
+   </component>
+   <component name="VcsManagerConfiguration">
+@@ -125,6 +124,7 @@
+     <MESSAGE value="&quot;creacion de clases graficas e implementacion de cambio ventanas&quot;" />
+     <MESSAGE value="&quot;comienzo interfaz basica seleccion bus&quot;" />
+     <MESSAGE value="&quot;implementacion de logica a la ventana 1&quot;" />
+-    <option name="LAST_COMMIT_MESSAGE" value="&quot;implementacion de logica a la ventana 1&quot;" />
++    <MESSAGE value="&quot;finalizacion de interfaz y bloqueo de botones&quot;" />
++    <option name="LAST_COMMIT_MESSAGE" value="&quot;finalizacion de interfaz y bloqueo de botones&quot;" />
+   </component>
+ </project>
+\ No newline at end of file

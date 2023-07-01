@@ -8,7 +8,7 @@ package Logica;
 
 public class AsientoOcupado implements EstadoAsiento {
     /**
-     * metodo para reservar un asiento ocupado
+     * metodo para intentar reservar un asiento ocupado
      * @param asiento es el asiento ya ocupado
      */
     @Override

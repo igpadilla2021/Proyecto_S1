@@ -14,6 +14,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import  java.io.*;
+import java.net.URL;
 import javax.swing.ImageIcon;
 
 
@@ -29,7 +30,6 @@ public class SeleccionViaje extends JPanel {
     private String origen;
     private String destino;
     private static SeleccionViaje instance;
-
     private GenerarEstaciones generarEstaciones;
 
     /**
@@ -40,7 +40,8 @@ public class SeleccionViaje extends JPanel {
     private SeleccionViaje(PanelVentanas panelVentanas) throws IOException {
         this.panelVentanas=panelVentanas;
         this.setLayout(null);
-        this.setBackground(new Color(245,245,245));
+        this.setBackground(new Color(255,222,173));
+
 
         ciudades=new String[]{"Concepcion", "Chillan", "Santiago", "Yumbel"};
         // estos son los desplegables con la lista de arriba
@@ -58,7 +59,10 @@ public class SeleccionViaje extends JPanel {
         confirmarButton.setBackground(new Color(255,99,71));
 
         imagenUbicacion = new JLabel();
-        ImageIcon imagen = new ImageIcon("C:\\Users\\igpad\\OneDrive\\Documentos\\GitHub\\Proyecto_S1\\proyecto1\\src\\main\\java\\JPG\\gps1.png");
+        ClassLoader classLoader = SeleccionViaje.class.getClassLoader();
+        URL url = classLoader.getResource("gps.png");
+        String filePath = url.getPath();
+        ImageIcon imagen = new ImageIcon(filePath);
         imagenUbicacion.setIcon(imagen);
 
         int distancia=330;

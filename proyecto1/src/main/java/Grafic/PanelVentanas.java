@@ -52,7 +52,7 @@ public class PanelVentanas extends JPanel{
     /**
      * metodo para costruir la ventana 3
      */
-        public void avanceVentana3(int op, Bus bus){
+    public void avanceVentana3(int op, Bus bus){
         removeAll();
         if(op==1){
             seleccionAsientos=new SeleccionAsientos(this,op,bus);
