@@ -40,12 +40,12 @@ public class SeleccionBus extends JPanel {
         int p = 0;
         for (int c = 8; c < 23; c = c + 1) {
             Bus b1 = estacion.getBus(Estacion.SEMI_CAMA, c);
-            String bus1 = "   " + b1.getName() + "        salida: " + c + ":00" + "        SERVICIO: semi_cama";
+            String bus1 = "   " + b1.getName() + "        salida: " + c + ":00" + "        Numero de pisos: 1        SERVICIO: semi_cama";
             opciones[p] = bus1;
             buses[p] = b1;
             p = p + 1;
             Bus b2 = estacion.getBus(Estacion.SALON_CAMA, c);
-            String bus2 = "   " + b2.getName() + "        salida: " + c + ":00" + "        SERVICIO: semi_cama y salon cama";
+            String bus2 = "   " + b2.getName() + "        salida: " + c + ":00" + "        Numero de pisos: 2        SERVICIO: semi_cama y salon cama";
             opciones[p] = bus2;
             buses[p] = b2;
             p = p + 1;

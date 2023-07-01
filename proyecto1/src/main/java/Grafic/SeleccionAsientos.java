@@ -21,6 +21,9 @@ public class SeleccionAsientos extends JPanel{
     private GenerarSalonCama asientos2;
     private int[] asientosList;
     private int cantidadReservar=0;
+    private int totalPagar=0;
+    private int servicio;
+
 
     /**
      * metodo constructor de el seleccionador de asientos, el cual se encarga de generar el cuadro seleccionador de
@@ -34,6 +37,7 @@ public class SeleccionAsientos extends JPanel{
         this.setLayout(null);
         this.setBackground(new Color(255,222,173));
         asientosList=new int[42];
+        this.servicio=servicio;
 
         //generacion de graficacion asientos
         if (servicio==1){
@@ -74,6 +78,12 @@ public class SeleccionAsientos extends JPanel{
         cantidadReservar=cantidadReservar+1;
         if(cantidadReservar<15){
             asientosList[num-1]=num;
+            if(num<=30){
+                totalPagar=totalPagar+3000;
+            }
+            else{
+                totalPagar=totalPagar+6000;
+            }
         }
     }
 
@@ -85,6 +95,12 @@ public class SeleccionAsientos extends JPanel{
         int cantidadRervados=0;
         cantidadReservar=cantidadReservar-1;
         asientosList[num-1]=0;
+        if(num<=30){
+            totalPagar=totalPagar-3000;
+        }
+        else{
+            totalPagar=totalPagar-6000;
+        }
         for (int c=0; c<42; c=c+1){
             if(asientosList[c]!=0){
                 cantidadRervados=1;
@@ -120,18 +136,38 @@ public class SeleccionAsientos extends JPanel{
         g.setFont(font);
         g.drawString("ASIENTOS SELECCIONADOS",260,580);
         font = new Font("Arial", Font.PLAIN, 15);
-        g.drawString(asientosString,230,640);
+        g.drawString(asientosString,230,620);
+        if(totalPagar>0){
+            g.drawString("Total a pagar : $"+Integer.toString(totalPagar),380,670);
+        }
         g.setColor(Color.GREEN);
         g.fillRect(450,325,35,35);
-        g.setColor(Color.blue);
-        g.fillRect(450,375,35,35);
+        if (servicio!=1){
+            g.setColor(Color.WHITE);
+            g.fillRect(660,260,80,40);
+            g.setColor(Color.blue);
+            g.fillRect(450,375,35,35);
+            g.setColor(Color.BLACK);
+            font = new Font("Arial", Font.PLAIN, 20);
+            g.setFont(font);
+            g.drawString("Asientos saloncama",495,400);
+            g.drawString("1° PISO",665,290);
+        }
+        g.setColor(Color.WHITE);
+        g.fillRect(275,500,80,40);
         g.setColor(Color.red);
         g.fillRect(450,425,35,35);
         g.setColor(Color.BLACK);
         font = new Font("Arial", Font.PLAIN, 20);
         g.setFont(font);
+        if(servicio==1){
+            g.drawString("1° PISO",280,530);
+        }
+        else {
+            g.drawString("2° PISO",280,530);
+
+        }
         g.drawString("Asientos semicama",495,350);
-        g.drawString("Asientos saloncama",495,400);
         g.drawString("¡Asientos ocupados!",495,450);
     }
 
